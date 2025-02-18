@@ -1,0 +1,24 @@
+{
+    "Alarms": [
+        {
+            "Hour": 9,
+            "Minute": 0,
+            "Meridian": "AM",
+            "Repeat": true,
+            "Message": "Tumpf Metamation - Login Time",
+            "RepeatDays": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "Music": "Jingle",
+            "AlarmSound": "Disabled"
+        },
+        {
+            "Hour": 8,
+            "Minute": 0,
+            "Meridian": "AM",
+            "Repeat": false,
+            "Message": "Workout Alarm",
+            "RepeatDays": [],
+            "Music": "Tap",
+            "AlarmSound": "10 minutes"
+        }
+    ]
+}

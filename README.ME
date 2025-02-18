@@ -1,0 +1,77 @@
+# TrumpfMetamation_Task_Alarm
+
+This automation script is designed to automate the creation, validation, and deletion of alarms in the Windows Alarm app using FlaUI. The script interacts with the app's GUI elements, retrieves data from a JSON configuration file, and performs the necessary actions like setting the alarm, validating the alarm settings, and deleting alarms.
+
+## Prerequisites
+
+Before running the script, ensure that you have the following installed:
+
+- [.NET SDK](https://dotnet.microsoft.com/download) (version 5.0 or later)
+- [FlaUI NuGet package](https://www.nuget.org/packages/FlaUI) for UI automation
+- A Windows machine (Windows 10 or later) with the **Alarms & Clock** app installed.
+
+## Project Setup
+
+1. Clone the repository to your local machine:
+    ```bash
+    git clone https://github.com/Saravanan-Ramdass/TrumpfMetamation_Task_Alarm.git
+    cd alarm-automation
+    ```
+
+2. Open the project in Visual Studio or your preferred C# IDE.
+
+3. Install the necessary NuGet packages:
+    ```bash
+    dotnet add package FlaUI.UIA3
+    dotnet add package FlaUI.Core
+    ```
+
+4. Modify the `config.json` file to set your alarm settings. The file should contain alarm details like hour, minute, repeat days, alarm sound, snooze time, etc.
+
+    Example `config.json`:
+    ```json
+    {
+        "Alarms": [
+            {
+                "Hour": 7,
+                "Minute": 30,
+                "Meridian": "AM",
+                "Message": "Morning Alarm",
+                "Repeat": true,
+                "RepeatDays": ["Monday", "Wednesday", "Friday"],
+                "AlarmSound": "Chime",
+                "SnoozeTime": 5
+            }
+        ]
+    }
+    ```
+
+## Running the Automation Script
+
+1. Build and run the script:
+
+    Open the terminal or command prompt and navigate to the project directory. Run the following command:
+
+    ```bash
+    dotnet run
+    ```
+
+2. The script will:
+   - Open the Windows Alarm app.
+   - Create alarms based on the configuration data in `config.json`.
+   - Validate the alarm "Message" value to ensure they were created correctly.
+   - Delete alarms by their "Message" value (found in `config.json`).
+
+## Test Flow
+
+1. **Launch Application**: The script will launch the **Alarms & Clock** app.
+2. **Create Alarms**: Using the data in `config.json`, the script will create new alarms.
+3. **Validate Alarms**: The script will check that the alarms match the values specified in `config.json`.
+4. **Delete Alarms**: The script will find alarms by the message and delete them.
+
+## Troubleshooting
+
+- Ensure the **Alarms & Clock** app is installed and functioning correctly on your machine.
+- Make sure the `config.json` file is correctly formatted and contains valid values for the alarm.
+- If any error occurs with the UI automation, check the accessibility of the elements or try adjusting the automation timeouts.
+

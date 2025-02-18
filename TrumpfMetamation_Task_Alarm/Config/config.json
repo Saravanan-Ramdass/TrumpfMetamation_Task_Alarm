@@ -5,7 +5,7 @@
             "Minute": 0,
             "Meridian": "AM",
             "Repeat": true,
-            "Message": "Tumpf Metamation - Login Time",
+            "Message": "Trumpf Metamation - Login Time",
             "RepeatDays": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
             "Music": "Jingle",
             "AlarmSound": "Disabled"
